@@ -6,9 +6,9 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import Header from "./Header";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -21,7 +21,6 @@ const Login = () => {
     setFormError(null);
   };
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const handleLogin = () => {
     const validateMessage = validateLoginForm(
@@ -47,22 +46,21 @@ const Login = () => {
         .then((userCredential) => {
           // Signed up
           const user = userCredential.user;
-          console.log("user signed up= ", user);
+
           setFormError(null);
           updateProfile(user, {
-            displayName: "Riya",
+            displayName: name.current.value,
             photoURL: "https://example.com/jane-q-user/profile.jpg",
           })
             .then(() => {
               setFormError(null);
-              dispatch(addUser(auth));
+              const { displayName, email, uid } = auth.currentUser;
+              dispatch(addUser({ displayName, email, uid }));
             })
             .catch((error) => {
               // An error occurred
               // ...
             });
-
-          navigate("/browse");
         })
         .catch((error) => {
           const errorCode = error.code;
@@ -70,10 +68,13 @@ const Login = () => {
           setFormError(errorMessage);
         });
     } else {
-      signInWithEmailAndPassword(auth, email, password)
+      signInWithEmailAndPassword(
+        auth,
+        email.current.value,
+        password.current.value
+      )
         .then((userCredential) => {
           const user = userCredential.user;
-          navigate("/browse");
           setFormError(null);
         })
         .catch((error) => {
@@ -85,9 +86,10 @@ const Login = () => {
   };
   return (
     <div>
+      <Header />
       <div>
         <img
-          className="absolute"
+          className="absolute "
           src="https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg"
           alt=""
         />
