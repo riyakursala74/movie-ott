@@ -9,10 +9,8 @@ const Header = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const userData = useSelector((store) => {
-    console.log("store= ", store);
     return store.user?.payload;
   });
-  console.log("user= ", userData);
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
@@ -42,18 +40,20 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute flex justify-between z-10 w-11/12">
-      <div className=" text-3xl font-extrabold text-red-600 py-9 px-36 bg-gradient-to-b from-black">
+    <div className="absolute flex justify-between z-10 w-screen bg-gradient-to-b from-black overflow-auto">
+      <div className=" text-3xl font-extrabold text-red-600 py-3 px-14 ">
         MOTT
       </div>
       {userData && (
-        <div className=" flex">
-          <div className="mr-7 bg-blue-900 text-white w-12 h-8 rounded-md p-1 mt-2">
-            {userData?.displayName}
-          </div>
+        <div className="flex mt-4">
+          <img
+            className="mx-2 w-9 h-11"
+            src="https://occ-0-1492-3662.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229"
+            alt=""
+          />
           <div>
             <button
-              className="bg-blue-900 text-white rounded-md mr-2 w-20 h-8 mt-2"
+              className="bg-blue-900 text-white rounded-md mr-2 w-20 h-8 mr-3"
               onClick={handleSignOut}
             >
               Sign Out

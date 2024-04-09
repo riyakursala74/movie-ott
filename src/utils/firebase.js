@@ -6,14 +6,13 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: `${process.env.REACT_APP_FIREBASE_API_KEY}`,
   authDomain: "movie-ott-ae3cc.firebaseapp.com",
   projectId: "movie-ott-ae3cc",
   storageBucket: "movie-ott-ae3cc.appspot.com",
   messagingSenderId: "511938396171",
   appId: "1:511938396171:web:ffe32ad8cf7edc7696870e",
 };
-
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 export const auth = getAuth();
