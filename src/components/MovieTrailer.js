@@ -9,7 +9,7 @@ const MovieTrailer = () => {
   const movies = useSelector((store) => {
     return store.movie.movies;
   });
-  current_movie = movies[3];
+  current_movie = movies[0];
   const fetchMovie = async (id) => {
     const movie_videos = await fetch(
       `https://api.themoviedb.org/3/movie/${id}/videos?language=en-US`,
@@ -30,8 +30,8 @@ const MovieTrailer = () => {
   }, [movies]);
 
   return (
-    <div className="overflow-hidden">
-      <div className="absolute pt-48 px-20 bg-gradient-to-r from-black w-screen aspect-video overflow-hidden">
+    <div className="overflow-hidden no-scrollbar">
+      <div className="absolute pt-48 px-20 bg-gradient-to-r from-black aspect-video overflow-hidden">
         <h2 className="text-white text-4xl font-bold">
           {current_movie?.title}
         </h2>

@@ -20,7 +20,6 @@ const useMovieDetails = () => {
     );
 
     const movie_data = await movies.json();
-    console.log("setting movie= ", movie_data);
     dispatch(setMovieList(movie_data));
   };
 };

@@ -40,8 +40,8 @@ const Header = () => {
   };
 
   return (
-    <div className="absolute flex justify-between z-10 w-screen bg-gradient-to-b from-black overflow-auto">
-      <div className=" text-3xl font-extrabold text-red-600 py-3 px-14 ">
+    <div className="absolute flex justify-between z-10 bg-gradient-to-b from-black overflow-hidden w-[100%]">
+      <div className="text-3xl font-extrabold text-red-600 py-3 px-16">
         MOTT
       </div>
       {userData && (
@@ -53,7 +53,7 @@ const Header = () => {
           />
           <div>
             <button
-              className="bg-blue-900 text-white rounded-md mr-2 w-20 h-8 mr-3"
+              className="bg-blue-900 text-white rounded-md w-20 h-8"
               onClick={handleSignOut}
             >
               Sign Out
