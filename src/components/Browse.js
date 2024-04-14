@@ -6,6 +6,7 @@ import MoviesContainer from "./MoviesContainer";
 import usePopularMovies from "../utils/usePopularMovies";
 import useTRMovies from "../utils/useTRMovies";
 import useUpcomingMovies from "../utils/useUpcomingMovies";
+import Footer from "./Footer";
 
 const Browse = () => {
   useMovieDetails();
@@ -17,6 +18,7 @@ const Browse = () => {
       <Header />
       <MovieTrailer />
       <MoviesContainer />
+      <Footer />
     </div>
   );
 };

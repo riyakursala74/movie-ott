@@ -36,10 +36,10 @@ const MovieTrailer = () => {
           {current_movie?.title}
         </h2>
         <p className="text-white w-1/2 mt-7">{current_movie?.overview}</p>
-        <button className="bg-white px-9 py-2 mt-3 mr-5 text-black rounded-sm text-bold">
+        <button className="bg-white px-9 py-2 mt-3 mr-5 text-black rounded-sm text-bold hover:font-bold hover:opacity-85">
           Play
         </button>
-        <button className="bg-gray-500 px-9 py-2 mt-3 text-white rounded-sm text-bold">
+        <button className="bg-gray-500 px-9 py-2 mt-3 text-white rounded-sm text-bold hover:font-bold hover:opacity-85">
           Info
         </button>
       </div>

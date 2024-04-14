@@ -14,7 +14,6 @@ const movieSlice = createSlice({
       state.movies = action.payload.results;
     },
     setMovieTrailer: (state, action) => {
-      console.log("act= ", action.payload);
       state.trailer = action.payload;
     },
     setPopularMovieList: (state, action) => {
