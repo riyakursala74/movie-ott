@@ -9,6 +9,7 @@ import { auth } from "../utils/firebase";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import Header from "./Header";
+import { LOGIN_POSTER, PHOTO_URL } from "../utils/constant";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -30,8 +31,6 @@ const Login = () => {
       isSignIn
     );
     setFormError(validateMessage);
-
-    console.log("handle login= ", validateMessage);
     if (validateMessage !== null) {
       return;
     }
@@ -50,7 +49,7 @@ const Login = () => {
           setFormError(null);
           updateProfile(user, {
             displayName: name.current.value,
-            photoURL: "https://example.com/jane-q-user/profile.jpg",
+            photoURL: { PHOTO_URL },
           })
             .then(() => {
               setFormError(null);
@@ -88,11 +87,7 @@ const Login = () => {
     <div>
       <Header />
       <div>
-        <img
-          className="absolute "
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/9d3533b2-0e2b-40b2-95e0-ecd7979cc88b/a3873901-5b7c-46eb-b9fa-12fea5197bd3/IN-en-20240311-popsignuptwoweeks-perspective_alpha_website_large.jpg"
-          alt=""
-        />
+        <img className="absolute " src={LOGIN_POSTER} alt="" />
       </div>
       <div className="absolute  w-3/12 z-10 mt-32 right-0 left-0 m-auto h-60">
         <form
@@ -137,6 +132,9 @@ const Login = () => {
           </button>
           <h4 onClick={handleSignIn} className="cursor-pointer text-white">
             {isSignIn ? "Sign Up Now!" : "Already registered? Sign In Now"}
+          </h4>
+          <h4 className="text-white italic pt-5 px-3">
+            A world of creativity and fun awaits! Please don't navigate away
           </h4>
         </form>
       </div>
