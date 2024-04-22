@@ -87,16 +87,20 @@ const Login = () => {
     <div>
       <Header />
       <div>
-        <img className="absolute " src={LOGIN_POSTER} alt="" />
+        <img
+          className="absolute h-screen md:h-auto bg-no-repeat"
+          src={LOGIN_POSTER}
+          alt=""
+        />
       </div>
-      <div className="absolute  w-3/12 z-10 mt-32 right-0 left-0 m-auto h-60">
+      <div className="absolute  md:w-3/12  w-11/12 z-10 mt-32 right-0 left-0 m-auto h-60">
         <form
           onSubmit={(e) => {
             e.preventDefault();
           }}
-          className="pl-11 py-11 bg-black bg-opacity-80 rounded-sm"
+          className="md:pl-11 pl-3 py-11 bg-black bg-opacity-80 rounded-sm"
         >
-          <h2 className="text-white text-2xl font-bold mb-3">
+          <h2 className="text-white md:text-2xl font-lg font-bold mb-3">
             {isSignIn ? "Sign In" : "Sign Up"}
           </h2>
           {!isSignIn && (
@@ -104,7 +108,7 @@ const Login = () => {
               ref={name}
               type="text"
               name="name"
-              className="relative p-2 m-2 w-72 bg-gray-800 text-white"
+              className="relative md:p-2 p-1 md:m-2 m-1 w-72 bg-gray-800 text-white"
               placeholder="Name"
             />
           )}
@@ -125,12 +129,15 @@ const Login = () => {
           <br />
           <h4 className="font-bold text-l text-red-600 ml-1">{formError}</h4>
           <button
-            className="p-2 m-2 bg-red-800 text-white font-bold px-5 rounded-md mt-4"
+            className="md:p-2 md:m-2 p-1 m-1 bg-red-800 text-white font-bold md:px-5 px-2 rounded-md mt-4"
             onClick={handleLogin}
           >
             {isSignIn ? "Sign In" : "Sign Up"}
           </button>
-          <h4 onClick={handleSignIn} className="cursor-pointer text-white">
+          <h4
+            onClick={handleSignIn}
+            className="cursor-pointer text-white text-sm md:text-lg pl-2 md:pl-1"
+          >
             {isSignIn ? "Sign Up Now!" : "Already registered? Sign In Now"}
           </h4>
           <h4 className="text-white italic pt-5 px-3">

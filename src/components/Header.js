@@ -47,34 +47,31 @@ const Header = () => {
 
   return (
     <div className="absolute flex justify-between z-10 bg-gradient-to-b from-black overflow-hidden w-[100%]">
-      <div className="text-3xl font-extrabold text-red-600 py-3 px-16 font-mono">
+      <div className="text-3xl font-extrabold text-red-600 py-3 mb-3 md:mb-0 md:pl-16 pl-2 font-mono">
         MOTT
       </div>
       {userData && (
-        <div
-          className="flex mt-4"
-          onMouseLeave={toggleMenu}
-          onMouseEnter={toggleMenu}
-        >
+        <div className="flex mt-4" onClick={toggleMenu}>
           <img
-            className="mx-2 w-9 h-10"
+            className="md:mx-2 w-5 md:w-9 md:h-10 h-6 hidden md:block absolute md:right-4 right-5"
             src="https://occ-0-1492-3662.1.nflxso.net/dnm/api/v6/vN7bi_My87NPKvsBoib006Llxzg/AAAABTZ2zlLdBVC05fsd2YQAR43J6vB1NAUBOOrxt7oaFATxMhtdzlNZ846H3D8TZzooe2-FT853YVYs8p001KVFYopWi4D4NXM.png?r=229"
             alt=""
           />
-          <div className="mr-6text-white relative">
-            {menu ? (
-              <FaCaretDown className="text-white mt-2" />
-            ) : (
-              <FaCaretUp className="text-white mt-2" />
-            )}
-
-            <div>
+          <div className="flex flex-col pr-1">
+            <div className="md:mr-2 text-white absolute right-0">
+              {menu ? (
+                <FaCaretDown className="text-white mt-2" />
+              ) : (
+                <FaCaretUp className="text-white mt-2" />
+              )}
+            </div>
+            <div className="mt-4 md:mt-7 text-sm">
               <button
                 onClick={handleSignOut}
                 className={
                   menu
-                    ? "invisible border border-gray-700 py-4 px-2 mt-4"
-                    : "border border-gray-700 py-4 px-2 mt-4 text-white bg-gray-950"
+                    ? "invisible border border-gray-700 py-1 md:py-4 px-2 mt-4"
+                    : "border border-gray-700 py-1 md:py-4 px-1 md:px-2 mt-4 text-white bg-gray-950"
                 }
               >
                 Sign Out

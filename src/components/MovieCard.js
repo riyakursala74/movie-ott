@@ -8,7 +8,7 @@ const MovieCard = ({ movie }) => {
   };
   return (
     <div
-      className="min-w-44 m-2 flex"
+      className="md:min-w-44 min-w-32 m-2 flex"
       onMouseEnter={hovered}
       onMouseLeave={hovered}
     >

@@ -31,15 +31,17 @@ const MovieTrailer = () => {
 
   return (
     <div className="overflow-hidden no-scrollbar">
-      <div className="absolute pt-48 px-20 bg-gradient-to-r from-black aspect-video overflow-hidden">
-        <h2 className="text-white text-4xl font-bold">
+      <div className="absolute md:pt-48 pt-32 h-64 md:h-auto md:px-20 px-4 bg-gradient-to-r from-black aspect-video overflow-hidden">
+        <h2 className="text-white md:text-4xl font-bold">
           {current_movie?.title}
         </h2>
-        <p className="text-white w-1/2 mt-7">{current_movie?.overview}</p>
-        <button className="bg-white px-9 py-2 mt-3 mr-5 text-black rounded-sm text-bold hover:font-bold hover:opacity-85">
+        <p className="text-white w-1/2 mt-7 hidden md:block">
+          {current_movie?.overview}
+        </p>
+        <button className="bg-white px-1 md:px-9 md:py-2 py-1 mt-3 mr-5 text-black rounded-sm text-bold hover:font-bold hover:opacity-85">
           Play
         </button>
-        <button className="bg-gray-500 px-9 py-2 mt-3 text-white rounded-sm text-bold hover:font-bold hover:opacity-85">
+        <button className="bg-gray-500 px-1 hidden md:block md:px-9 md:py-2 py-1 mt-3 text-white rounded-sm text-bold hover:font-bold hover:opacity-85">
           Info
         </button>
       </div>
