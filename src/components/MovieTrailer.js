@@ -31,7 +31,7 @@ const MovieTrailer = () => {
 
   return (
     <div className="overflow-hidden no-scrollbar">
-      <div className="absolute md:pt-48 pt-32 h-64 md:h-auto md:px-20 px-4 bg-gradient-to-r from-black aspect-video overflow-hidden">
+      <div className="absolute md:pt-48 pt-32 h-56 md:h-auto md:px-20 px-4 bg-gradient-to-r from-black aspect-video overflow-hidden">
         <h2 className="text-white md:text-4xl font-bold">
           {current_movie?.title}
         </h2>
