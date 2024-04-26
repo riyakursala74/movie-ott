@@ -9,8 +9,8 @@ const MoviesContainer = () => {
   const upcoming = useSelector((store) => store.movie.upcoming_movies);
 
   return (
-    <div className=" bg-black md:pl-3">
-      <div className="md:-mt-44 relative z-40">
+    <div className=" bg-black md:pl-3 ">
+      <div className="md:-mt-44 relative z-20">
         <MovieList movies={now_movies} title="Now Playing" id="0" />
       </div>
       <MovieList movies={top_rated} title="Top Rated" id="1" />

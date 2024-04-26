@@ -2,7 +2,7 @@ import React from "react";
 import MovieCard from "./MovieCard";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 const scrollRight = (id) => {
-  document.getElementById(id).scrollBy(100, 0);
+  document.getElementById(id).scrollBy(1500, 0);
 };
 
 const scrollLeft = (id) => {
@@ -11,7 +11,7 @@ const scrollLeft = (id) => {
 
 const MovieList = ({ movies, title, id }) => {
   return (
-    <div className="md:pl-6 pl-2">
+    <div className="md:pl-6 pl-2 mt-4">
       <div className="text-white md:text-xl italic">{title}</div>
       <div className="flex">
         <div
