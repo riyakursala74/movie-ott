@@ -14,13 +14,12 @@ const MovieCard = ({ movie }) => {
         setHover(false);
       }}
     >
-      {!hover && (
-        <img
-          className="cursor-pointer"
-          src={`${IMAGE_URL}${movie.poster_path}`}
-          alt="movie"
-        />
-      )}
+      <img
+        className={!hover ? "block" : "md:hidden block"}
+        src={`${IMAGE_URL}${movie.poster_path}`}
+        alt="movie"
+      />
+
       {hover && (
         <div className="relative h-0 w-0">
           <div className="absolute -top-14 bottom-2">

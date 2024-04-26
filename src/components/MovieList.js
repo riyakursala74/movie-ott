@@ -2,11 +2,11 @@ import React from "react";
 import MovieCard from "./MovieCard";
 import { FaCaretLeft, FaCaretRight } from "react-icons/fa";
 const scrollRight = (id) => {
-  document.getElementById(id).scrollBy(1500, 0);
+  document.getElementById(id).scrollBy(1960, 0);
 };
 
 const scrollLeft = (id) => {
-  document.getElementById(id).scrollBy(-100, 0);
+  document.getElementById(id).scrollBy(-1960, 0);
 };
 
 const MovieList = ({ movies, title, id }) => {
@@ -20,7 +20,10 @@ const MovieList = ({ movies, title, id }) => {
         >
           <FaCaretLeft className="text-white font-bold text-xl bg-gradient-to-b from:black items-center mt-24 " />
         </div>
-        <div className="flex overflow-x-scroll py-3 overflow-y-hidden" id={id}>
+        <div
+          className="flex overflow-x-scroll md:overflow-x-hidden py-3 overflow-y-hidden"
+          id={id}
+        >
           {movies &&
             movies.map((movie) => {
               return <MovieCard movie={movie} key={movie.id} />;

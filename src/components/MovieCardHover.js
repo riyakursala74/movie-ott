@@ -3,7 +3,7 @@ import { FaCaretRight } from "react-icons/fa";
 
 const MovieCardHover = ({ image, rating, releaseDate }) => {
   return (
-    <div className=" bg-gray-700 z-999 text-white rounded-lg w-80 border-separate">
+    <div className=" bg-gray-700 z-999 text-white rounded-lg w-80 border-separate hidden md:block">
       <div className="flex flex-col rounded-md">
         <div>
           <img src={image} alt="" className="h-64 w-80" />
