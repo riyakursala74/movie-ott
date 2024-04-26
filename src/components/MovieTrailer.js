@@ -52,7 +52,7 @@ const MovieTrailer = () => {
           src={
             "https://www.youtube.com/embed/" +
             trailer?.key +
-            "?autoplay=1&mute=1&enablejsapi=1?si=4Pchve3YzXRy8t4y&amp;controls=0"
+            "?autoplay=1&loop=1&mute=1&enablejsapi=1?si=4Pchve3YzXRy8t4y&amp;controls=0"
           }
           title="YouTube video player"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
