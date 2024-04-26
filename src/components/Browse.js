@@ -14,7 +14,7 @@ const Browse = () => {
   useTRMovies();
   useUpcomingMovies();
   return (
-    <div className="overflow-y-hidden no-scrollbar w-screen">
+    <div className="overflow-y-hidden no-scrollbar w-screen bg-black">
       <Header />
       <MovieTrailer />
       <MoviesContainer />
