@@ -1,7 +1,7 @@
 # movie-ott
-Movie streaming SPA crafted with modern and responsive UI
-Authentication implemented allowing user to Sign Up and Sign-In
-Created using- React, Redux, Tailwind
+1. Movie streaming SPA crafted with modern and responsive UI
+2. Authentication implemented allowing user to Sign Up and Sign-In
+3. Created using- React, Redux, Tailwind
 
 # Link
 Website Link- https://movie-ott-ae3cc.web.app/
